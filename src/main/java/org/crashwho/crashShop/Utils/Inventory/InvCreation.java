@@ -202,11 +202,7 @@ public class InvCreation extends InvManager {
         StaticPane staticPane = new StaticPane(0, 0, 9, inv.getRows());
         pagingButtons.setBackwardButton(new GuiItem(backItem.getItem()));
         pagingButtons.setForwardButton(new GuiItem(nextItem.getItem()));
-        staticPane.addItem(new GuiItem(main.getItem(), event -> {
-
-            initMainInventory((Player) event.getWhoClicked());
-
-        }), main.getX(), main.getY());
+        staticPane.addItem(new GuiItem(main.getItem(), event -> initMainInventory((Player) event.getWhoClicked())), main.getX(), main.getY());
 
 
         pagingButtons.setButtonsAlwaysVisible(true);
