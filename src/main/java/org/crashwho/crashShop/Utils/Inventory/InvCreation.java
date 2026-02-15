@@ -196,7 +196,7 @@ public class InvCreation extends InvManager {
         pagingButtons.setForwardButton(new GuiItem(nextItem.getItem()));
         staticPane.addItem(new GuiItem(main.getItem(), event -> {
 
-            initMainInventory((Player) event.getWhoClicked());;
+            initMainInventory((Player) event.getWhoClicked());
 
         }), main.getX(), main.getY());
 
