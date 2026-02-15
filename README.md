@@ -57,7 +57,7 @@ Follow these steps to get your economy running in minutes:
 2.  **Dependencies:** Ensure you have **Vault** and an economy provider (e.g., EssentialsX) installed.
 3.  **Install:** Drag and drop `CrashShop.jar` into your server's `/plugins/` folder.
 4.  **Launch:** Restart your server to generate the default configuration files.
-5.  **Configure:** Edit `config.yml` to your liking and run `/shop reload`.
+5.  **Configure:** Edit all the files to your liking and run `/shop reload`.
 
 ---
 
