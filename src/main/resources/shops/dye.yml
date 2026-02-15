@@ -1,6 +1,9 @@
-id: dye
+#Here items have two more parameters:
+#Slot: the slot where you want to place the item
+#Page: the page where the item should be
+id: dye #Category identifier
 title: 'ᴅʏᴇ'
-rows: 6
+rows: 6 #Total slots of the inventory: 54 (Double Chest)
 items:
   white:
     material: WHITE_DYE

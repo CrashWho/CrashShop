@@ -1,6 +1,9 @@
-id: ore
+#Here items have two more parameters:
+#Slot: the slot where you want to place the item
+#Page: the page where the item should be
+id: ore #Category identifier
 title: 'ᴏʀᴇ'
-rows: 6
+rows: 6 #Total slots of the inventory: 54 (Double Chest)
 items:
   coal:
     material: COAL
@@ -9,6 +12,10 @@ items:
     page: 0
     buy-price: 20.0
     sell-price: 2.0
+    custom-model-data: 4
+    item-model: "yay"
+    enchantments:
+      minecraft:sharpness:5
     lore:
       - ""
       - " <gray>│ <white>Type: <#708090>Mineral"

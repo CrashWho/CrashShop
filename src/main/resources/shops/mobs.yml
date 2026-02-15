@@ -1,6 +1,9 @@
-id: mobs
+#Here items have two more parameters:
+#Slot: the slot where you want to place the item
+#Page: the page where the item should be id: mobs
+id: mobs #Category identifier
 title: 'ᴍᴏʙꜱ'
-rows: 6
+rows: 6 #Total slots of the inventory: 54 (Double Chest)
 items:
   rotten_flesh:
     material: ROTTEN_FLESH
