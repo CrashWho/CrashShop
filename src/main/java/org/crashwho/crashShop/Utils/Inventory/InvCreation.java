@@ -89,82 +89,90 @@ public class InvCreation extends InvManager {
 
     private void shopInventoryEvent(InventoryClickEvent event, SmartItem product) {
 
+        if (event.isLeftClick()) {
+            buyItems(event, product);
+
+        } else if(event.isRightClick())
+            sellItems(event, product);
+
+    }
+
+    private void buyItems(InventoryClickEvent event, SmartItem product) {
         Player player = (Player) event.getWhoClicked();
 
-        if (event.isLeftClick()) {
-            if (product.canBuy()) {
+        if (product.canBuy()) {
 
-                if (player.getInventory().firstEmpty() == -1) {
-                    player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.full-inv")));
-                    player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 1, 1);
-                    return;
-                }
-
-                if (event.isShiftClick()) {
-                    if (CrashShop.getEconomy().has(player, product.getBuyPrice() * 64)) {
-                        CrashShop.getEconomy().withdrawPlayer(player, product.getBuyPrice() * 64);
-                        player.give(ItemStack.of(product.getItem().getType(), 64));
-                        sendShopMessage("buy", player, product, 64);
-
-                    } else
-                        player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.no-money")));
-
-                } else {
-                    if (CrashShop.getEconomy().has(player, product.getBuyPrice())) {
-
-                        CrashShop.getEconomy().withdrawPlayer(player, product.getBuyPrice());
-                        player.give(ItemStack.of(product.getItem().getType()));
-                        sendShopMessage("buy", player, product, 1);
-
-                    } else
-                        player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.no-money")));
-                }
-
-            } else {
-                player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.cant-buy")));
+            if (player.getInventory().firstEmpty() == -1) {
+                player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.full-inv")));
+                player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 1, 1);
+                return;
             }
 
-        } else if(event.isRightClick()) {
-            if (product.canSell()) {
-                if (player.getInventory().contains(product.getItem().getType())) {
-                    if (event.isShiftClick()) {
+            if (event.isShiftClick()) {
+                if (CrashShop.getEconomy().has(player, product.getBuyPrice() * 64)) {
+                    CrashShop.getEconomy().withdrawPlayer(player, product.getBuyPrice() * 64);
+                    player.give(ItemStack.of(product.getItem().getType(), 64));
+                    sendShopMessage("buy", player, product, 64);
 
-                        int amount = 0;
-                        for (ItemStack item : player.getInventory().getContents()) {
+                } else
+                    player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.no-money")));
 
-                            if (item == null || item.getType().equals(Material.AIR)) continue;
+            } else {
+                if (CrashShop.getEconomy().has(player, product.getBuyPrice())) {
 
-                            if (item.getType() ==  product.getItem().getType())
-                                amount += item.getAmount();
+                    CrashShop.getEconomy().withdrawPlayer(player, product.getBuyPrice());
+                    player.give(ItemStack.of(product.getItem().getType()));
+                    sendShopMessage("buy", player, product, 1);
+
+                } else
+                    player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.no-money")));
+            }
+
+        } else
+            player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.cant-buy")));
+
+    }
+
+    private void sellItems(InventoryClickEvent event, SmartItem product) {
+        Player player = (Player) event.getWhoClicked();
+
+        if (product.canSell()) {
+            if (player.getInventory().contains(product.getItem().getType())) {
+                if (event.isShiftClick()) {
+
+                    int amount = 0;
+                    for (ItemStack item : player.getInventory().getContents()) {
+
+                        if (item == null || item.getType().equals(Material.AIR)) continue;
+
+                        if (item.getType() ==  product.getItem().getType())
+                            amount += item.getAmount();
+                    }
+                    CrashShop.getEconomy().depositPlayer(player, product.getSellPrice() * amount);
+                    player.getInventory().remove(product.getItem().getType());
+                    sendShopMessage("sell", player, product, amount);
+
+                } else {
+
+                    for (ItemStack item : player.getInventory().getContents()) {
+
+                        if (item == null || item.getType().equals(Material.AIR)) continue;
+
+                        if (item.getType() ==  product.getItem().getType()) {
+                            item.setAmount(item.getAmount() - 1);
+                            break;
                         }
-                        CrashShop.getEconomy().depositPlayer(player, product.getSellPrice() * amount);
-                        player.getInventory().remove(product.getItem().getType());
-                        sendShopMessage("sell", player, product, amount);
-
-                    } else {
-
-                        for (ItemStack item : player.getInventory().getContents()) {
-
-                            if (item == null || item.getType().equals(Material.AIR)) continue;
-
-                            if (item.getType() ==  product.getItem().getType()) {
-                                item.setAmount(item.getAmount() - 1);
-                                break;
-                            }
-
-                        }
-                        CrashShop.getEconomy().depositPlayer(player, product.getSellPrice());
-                        sendShopMessage("sell", player, product, 1);
 
                     }
-                } else
-                    player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.no-item")));
+                    CrashShop.getEconomy().depositPlayer(player, product.getSellPrice());
+                    sendShopMessage("sell", player, product, 1);
 
+                }
             } else
-                player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.cant-sell")));
+                player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.no-item")));
 
-        }
-
+        } else
+            player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.cant-sell")));
 
     }
 
