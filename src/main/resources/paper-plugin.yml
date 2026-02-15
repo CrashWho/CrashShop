@@ -1,0 +1,10 @@
+name: '${name}'
+version: ${version}
+main: org.crashwho.crashShop.CrashShop
+api-version: '1.21'
+authors: [ CrashWho ]
+dependencies:
+  server:
+    Vault:
+      load: BEFORE
+      required: true

@@ -1,0 +1,319 @@
+id: mobs
+title: 'ᴍᴏʙꜱ'
+rows: 6
+items:
+  rotten_flesh:
+    material: ROTTEN_FLESH
+    displayname: "<gradient:dark_red:#8B4513>Rotten Flesh</gradient>"
+    slot: 10
+    page: 0
+    buy-price: 10.0
+    sell-price: 1.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <green>Common"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$10.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$1.0 <gray>(Shift SellAll)"
+      - ""
+  bone:
+    material: BONE
+    displayname: "<gradient:white:#F5F5DC>Bone</gradient>"
+    slot: 11
+    page: 0
+    buy-price: 15.0
+    sell-price: 1.5
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <green>Common"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$15.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$1.5 <gray>(Shift SellAll)"
+      - ""
+  string:
+    material: STRING
+    displayname: "<gradient:white:gray>String</gradient>"
+    slot: 12
+    page: 0
+    buy-price: 15.0
+    sell-price: 1.5
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <green>Common"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$15.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$1.5 <gray>(Shift SellAll)"
+      - ""
+  eye:
+    material: SPIDER_EYE
+    displayname: "<gradient:dark_red:red>Spider Eye</gradient>"
+    slot: 13
+    page: 0
+    buy-price: 15.0
+    sell-price: 2.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <green>Common"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$15.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$2.0 <gray>(Shift SellAll)"
+      - ""
+  gunpowder:
+    material: GUNPOWDER
+    displayname: "<gradient:gray:dark_gray>Gunpowder</gradient>"
+    slot: 14
+    page: 0
+    buy-price: 30.0
+    sell-price: 3.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <green>Common (Farmable)"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$30.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$3.0 <gray>(Shift SellAll)"
+      - ""
+  slime:
+    material: SLIME_BALL
+    displayname: "<gradient:green:#00ff00>Slime Ball</gradient>"
+    slot: 15
+    page: 0
+    buy-price: 40.0
+    sell-price: 4.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <blue>Uncommon"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$40.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$4.0 <gray>(Shift SellAll)"
+      - ""
+  magma:
+    material: MAGMA_CREAM
+    displayname: "<gradient:#ffa500:red>Magma Cream</gradient>"
+    slot: 16
+    page: 0
+    buy-price: 40.0
+    sell-price: 5.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <blue>Uncommon"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$40.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$5.0 <gray>(Shift SellAll)"
+      - ""
+  blaze:
+    material: BLAZE_ROD
+    displayname: "<gradient:gold:yellow>Blaze Rod</gradient>"
+    slot: 19
+    page: 0
+    buy-price: 50.0
+    sell-price: 6.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <blue>Uncommon"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$50.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$6.0 <gray>(Shift SellAll)"
+      - ""
+  ghast:
+    material: GHAST_TEAR
+    displayname: "<gradient:white:aqua>Ghast Tear</gradient>"
+    slot: 20
+    page: 0
+    buy-price: 150.0
+    sell-price: 25.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <yellow>Rare"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$150.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$25.0 <gray>(Shift SellAll)"
+      - ""
+  ender_pearl:
+    material: ENDER_PEARL
+    displayname: "<gradient:dark_aqua:green>Ender Pearl</gradient>"
+    slot: 21
+    page: 0
+    buy-price: 30.0
+    sell-price: 2.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <green>Common (End Farm)"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$30.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$2.0 <gray>(Shift SellAll)"
+      - ""
+  feather:
+    material: FEATHER
+    displayname: "<gradient:white:gray>Feather</gradient>"
+    slot: 22
+    page: 0
+    buy-price: 10.0
+    sell-price: 1.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <green>Common"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$10.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$1.0 <gray>(Shift SellAll)"
+      - ""
+  leather:
+    material: LEATHER
+    displayname: "<gradient:#8B4513:#ffa500>Leather</gradient>"
+    slot: 23
+    page: 0
+    buy-price: 20.0
+    sell-price: 3.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <green>Common"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$20.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$3.0 <gray>(Shift SellAll)"
+      - ""
+  rabbit_foot:
+    material: RABBIT_FOOT
+    displayname: "<gradient:#F4A460:#ffc0cb>Rabbit's Foot</gradient>"
+    slot: 24
+    page: 0
+    buy-price: 100.0
+    sell-price: 15.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <blue>Rare"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$100.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$15.0 <gray>(Shift SellAll)"
+      - ""
+  phantom:
+    material: PHANTOM_MEMBRANE
+    displayname: "<gradient:white:gray>Phantom Membrane</gradient>"
+    slot: 25
+    page: 0
+    buy-price: 80.0
+    sell-price: 10.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <blue>Uncommon"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$80.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$10.0 <gray>(Shift SellAll)"
+      - ""
+  shulker:
+    material: SHULKER_SHELL
+    displayname: "<gradient:light_purple:dark_purple>Shulker Shell</gradient>"
+    slot: 28
+    page: 0
+    buy-price: 1000.0
+    sell-price: 150.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <light_purple>Epic"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$1000.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$150.0 <gray>(Shift SellAll)"
+      - ""
+  nautilus:
+    material: NAUTILUS_SHELL
+    displayname: "<gradient:aqua:blue>Nautilus Shell</gradient>"
+    slot: 29
+    page: 0
+    buy-price: 200.0
+    sell-price: 30.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <blue>Rare"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$200.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$30.0 <gray>(Shift SellAll)"
+      - ""
+  scute:
+    material: TURTLE_SCUTE
+    displayname: "<gradient:green:#00ff00>Turtle Scute</gradient>"
+    slot: 30
+    page: 0
+    buy-price: 150.0
+    sell-price: 20.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <blue>Rare"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$150.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$20.0 <gray>(Shift SellAll)"
+      - ""
+  armadillo_scute:
+    material: ARMADILLO_SCUTE
+    displayname: "<gradient:#8B4513:gray>Armadillo Scute</gradient>"
+    slot: 31
+    page: 0
+    buy-price: 50.0
+    sell-price: 10.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <blue>Uncommon"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$50.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$10.0 <gray>(Shift SellAll)"
+      - ""
+  breeze:
+    material: BREEZE_ROD
+    displayname: "<gradient:aqua:white>Breeze Rod</gradient>"
+    slot: 32
+    page: 0
+    buy-price: 120.0
+    sell-price: 25.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <blue>Rare"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$120.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$25.0 <gray>(Shift SellAll)"
+      - ""
+  nether_star:
+    material: NETHER_STAR
+    displayname: "<gradient:white:aqua>Nether Star</gradient>"
+    slot: 33
+    page: 0
+    buy-price: 7500.0
+    sell-price: 1500.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Boss Drop"
+      - " <gray>│ <white>Rarity: <light_purple>Legendary"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$7500.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$1500.0 <gray>(Shift SellAll)"
+      - ""
+  prismarine_shard:
+    material: PRISMARINE_SHARD
+    displayname: "<gradient:dark_aqua:aqua>Prismarine Shard</gradient>"
+    slot: 34
+    page: 0
+    buy-price: 40.0
+    sell-price: 4.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#9370DB>Mob Drop"
+      - " <gray>│ <white>Rarity: <green>Common (Farmable)"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$40.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$4.0 <gray>(Shift SellAll)"
+      - ""

@@ -1,0 +1,23 @@
+title: 'ꜱʜᴏᴘ'
+rows: 3
+items:
+  farming:
+    material: WHEAT
+    slot: 11
+    displayname: "<yellow><b>Farming"
+  food:
+    material: COOKED_BEEF
+    slot: 12
+    displayname: "<red><b>Food"
+  ore:
+    material: IRON_INGOT
+    slot: 13
+    displayname: "<dark_purple><b>Ores"
+  dye:
+    material: CYAN_DYE
+    slot: 14
+    displayname: "<dark_green><b>Dyes"
+  mobs:
+    material: GUNPOWDER
+    slot: 15
+    displayname: "<light_purple><b>Mobs"

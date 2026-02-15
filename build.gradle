@@ -1,0 +1,94 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id("com.gradleup.shadow") version "9.3.1"
+    id("xyz.jpenilla.run-paper") version "2.3.1"
+}
+
+def pluginName = "CrashShop"
+group = 'com.github.CrashWho'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc-repo"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+    compileOnly("com.github.MilkBowl:VaultAPI:1.7") {
+        exclude group: "org.bukkit"
+    }
+    implementation("com.github.stefvanschie.inventoryframework:IF:0.11.6")
+    implementation 'io.github.revxrsal:lamp.common:4.0.0-rc.14'
+    implementation 'io.github.revxrsal:lamp.bukkit:4.0.0-rc.14'
+    implementation 'io.github.revxrsal:lamp.brigadier:4.0.0-rc.14'
+}
+
+tasks {
+    runServer {
+        // Configure the Minecraft version for our task.
+        // This is the only required configuration besides applying the plugin.
+        // Your plugin's jar (or shadowJar if present) will be used automatically.
+        minecraftVersion("1.21.11")
+    }
+}
+
+def targetJavaVersion = 21
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+        withSourcesJar()
+        withJavadocJar()
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        options.release.set(targetJavaVersion)
+    }
+}
+
+compileJava {
+    // Preserve parameter names in the bytecode
+    options.compilerArgs += ["-parameters"]
+}
+
+tasks.shadowJar {
+    archiveBaseName.set('CrashShop')
+    archiveClassifier.set('')
+    archiveVersion.set(version)
+    relocate 'com.github.stefvanschie.inventoryframework', 'org.crashwho.CrashShop.inventoryframework'
+    relocate 'revxrsal.commands', 'org.crashwho.CrashShop.lamp'
+}
+
+processResources {
+    def props = [version: version, name: pluginName]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('paper-plugin.yml') {
+        expand props
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = group
+            artifactId = pluginName
+            version = version
+
+            from components.java
+        }
+    }
+}

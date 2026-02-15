@@ -1,0 +1,15 @@
+general-items:
+  back:
+    material: ARROW
+    displayname: "<red>Previous Page"
+  next:
+    material: ARROW
+    displayname: "<green>Next Page"
+  main:
+    material: BARRIER
+    displayname: "<red>Back"
+    slot: 49
+  filler:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    displayname: ""
