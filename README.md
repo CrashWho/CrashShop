@@ -84,13 +84,16 @@ The plugin generates a `config.yml` that is heavily commented to guide you throu
 
 *Example of ores.yml (A category):*
 ```yaml
+#Here items have two more parameters:
+#Slot: the slot where you want to place the item
+#Page: the page where the item should be 
 id: ore #Category identifier
 title: 'ᴏʀᴇ' 
 rows: 6 #Total slots of the inventory: 54 (Double Chest)
-items: #Every aspect of the items is optional, you can remove everything you want except for material
+items:
   coal: 
     material: COAL
-    displayname: "<gradient:black:gray>Coal</gradient>" #<-- MiniMessage support!
+    displayname: "<gradient:black:gray>Coal</gradient>"
     slot: 10
     page: 0
     buy-price: 20.0
@@ -107,6 +110,22 @@ items: #Every aspect of the items is optional, you can remove everything you wan
       - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$20.0 <gray>(Shift x64)"
       - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$2.0 <gray>(Shift SellAll)"
       - ""
+  charcoal:
+    material: CHARCOAL
+    displayname: "<gradient:gray:dark_gray>Charcoal</gradient>"
+    slot: 11
+    page: 0
+    buy-price: 15.0
+    sell-price: 1.0
+    lore:
+      - ""
+      - " <gray>│ <white>Type: <#708090>Mineral"
+      - " <gray>│ <white>Rarity: <green>Common"
+      - ""
+      - " <gray>➥ <green>Left-Click <white>to Buy: <gold>$15.0 <gray>(Shift x64)"
+      - " <gray>➥ <red>Right-Click <white>to Sell: <gold>$1.0 <gray>(Shift SellAll)"
+      - ""
+  # Continue...
 ```
 
 ## 👨‍💻 Developer API
