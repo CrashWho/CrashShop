@@ -3,6 +3,7 @@ package org.crashwho.crashShop;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
+import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.crashwho.crashShop.api.ShopImplement;
 import org.crashwho.crashShop.internal.Commands.Sell;
@@ -21,7 +22,6 @@ import revxrsal.commands.bukkit.actor.BukkitCommandActor;
 public final class CrashShop extends JavaPlugin {
 
     private static Economy econ = null;
-    private static CrashShopAPI api;
 
     private FileManager config;
     private FileManager messages;
@@ -39,8 +39,12 @@ public final class CrashShop extends JavaPlugin {
             return;
         }
         setupLamp();
-        api = new ShopImplement(this);
+        setupAPI();
 
+    }
+
+    private void setupAPI() {
+        getServer().getServicesManager().register(CrashShopAPI.class, new ShopImplement(this), this, ServicePriority.Normal);
     }
 
     private boolean setupEconomy() {
@@ -74,10 +78,6 @@ public final class CrashShop extends JavaPlugin {
 
     public static Economy getEconomy() {
         return econ;
-    }
-
-    public static CrashShopAPI getApi() {
-        return api;
     }
 
     public FileConfiguration getSettings() {
