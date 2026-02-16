@@ -1,4 +1,4 @@
-# CrashShop
+# <p align="center"><img src="https://github.com/user-attachments/assets/cce471d4-cb62-41ad-ad1d-81e3b812bc4e" width="50%" /></p>
 ### High-Performance Economy Solution for Modern Servers
 
 [![CodeRefactor](https://img.shields.io/badge/CodeRefactor-A%2B-success?style=for-the-badge)](https://www.codefactor.io/repository/github/crashwho/crashshop) ![Build Passing](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge) ![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)
