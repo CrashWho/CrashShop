@@ -4,12 +4,13 @@ import net.milkbowl.vault.economy.Economy;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.crashwho.crashShop.Commands.Sell;
-import org.crashwho.crashShop.Commands.Shop;
-import org.crashwho.crashShop.Utils.ChatFormat;
-import org.crashwho.crashShop.Utils.File.FileCreation;
-import org.crashwho.crashShop.Utils.File.FileManager;
-import org.crashwho.crashShop.Utils.File.ShopManager;
+import org.crashwho.crashShop.api.ShopImplement;
+import org.crashwho.crashShop.internal.Commands.Sell;
+import org.crashwho.crashShop.internal.Commands.Shop;
+import org.crashwho.crashShop.internal.Utils.ChatFormat;
+import org.crashwho.crashShop.internal.Utils.File.FileCreation;
+import org.crashwho.crashShop.internal.Utils.File.FileManager;
+import org.crashwho.crashShop.internal.Utils.File.ShopManager;
 import org.crashwho.crashShop.api.CrashShopAPI;
 import revxrsal.commands.Lamp;
 import revxrsal.commands.bukkit.BukkitLamp;
@@ -20,12 +21,13 @@ import revxrsal.commands.bukkit.actor.BukkitCommandActor;
 public final class CrashShop extends JavaPlugin {
 
     private static Economy econ = null;
+    private static CrashShopAPI api;
+
     private FileManager config;
     private FileManager messages;
     private FileManager menu;
     private FileCreation fileCreation;
     private ShopManager shopManager;
-    private CrashShopAPI api;
 
     @Override
     public void onEnable() {
@@ -37,7 +39,7 @@ public final class CrashShop extends JavaPlugin {
             return;
         }
         setupLamp();
-        api = new CrashShopAPI(this);
+        api = new ShopImplement(this);
 
     }
 
@@ -74,6 +76,10 @@ public final class CrashShop extends JavaPlugin {
         return econ;
     }
 
+    public static CrashShopAPI getApi() {
+        return api;
+    }
+
     public FileConfiguration getSettings() {
         return config.getData();
     }
@@ -92,10 +98,6 @@ public final class CrashShop extends JavaPlugin {
 
     public void reloadFiles() {
         fileCreation.reloadAll();
-    }
-
-    public CrashShopAPI getAPI() {
-        return api;
     }
 
 }

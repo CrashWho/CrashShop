@@ -1,11 +1,10 @@
-package org.crashwho.crashShop.Utils.File;
+package org.crashwho.crashShop.internal.Utils.File;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.crashwho.crashShop.CrashShop;
 
 import java.io.File;
-import java.io.IOException;
 
 public class FileManager {
 

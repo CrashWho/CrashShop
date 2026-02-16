@@ -1,4 +1,4 @@
-package org.crashwho.crashShop.Utils.File;
+package org.crashwho.crashShop.internal.Utils.File;
 
 import org.jetbrains.annotations.NotNull;
 

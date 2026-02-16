@@ -1,4 +1,4 @@
-package org.crashwho.crashShop.Utils.Inventory;
+package org.crashwho.crashShop.internal.Utils.Inventory;
 
 
 import com.github.stefvanschie.inventoryframework.gui.GuiItem;
@@ -16,9 +16,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.crashwho.crashShop.CrashShop;
-import org.crashwho.crashShop.Utils.ChatFormat;
-import org.crashwho.crashShop.Utils.Items.GuiItemBuilder;
-import org.crashwho.crashShop.Utils.Items.SmartItem;
+import org.crashwho.crashShop.internal.Utils.ChatFormat;
+import org.crashwho.crashShop.internal.Utils.Items.GuiItemBuilder;
+import org.crashwho.crashShop.internal.Utils.Items.SmartItem;
 
 import java.util.HashMap;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.crashwho.crashShop.Utils.Items;
+package org.crashwho.crashShop.internal.Utils.Items;
 
 import org.bukkit.inventory.ItemStack;
 import org.crashwho.crashShop.api.ShopItem;

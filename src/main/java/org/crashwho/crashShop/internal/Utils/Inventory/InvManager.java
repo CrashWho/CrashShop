@@ -1,12 +1,10 @@
-package org.crashwho.crashShop.Utils.Inventory;
+package org.crashwho.crashShop.internal.Utils.Inventory;
 
 import com.github.stefvanschie.inventoryframework.gui.type.ChestGui;
-import com.github.stefvanschie.inventoryframework.pane.OutlinePane;
-import com.github.stefvanschie.inventoryframework.pane.Pane;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.entity.HumanEntity;
 import org.crashwho.crashShop.CrashShop;
-import org.crashwho.crashShop.Utils.ChatFormat;
+import org.crashwho.crashShop.internal.Utils.ChatFormat;
 
 public class InvManager {
 

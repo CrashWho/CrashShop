@@ -1,9 +1,9 @@
-package org.crashwho.crashShop.Commands;
+package org.crashwho.crashShop.internal.Commands;
 
 import org.bukkit.entity.Player;
 import org.crashwho.crashShop.CrashShop;
-import org.crashwho.crashShop.Utils.ChatFormat;
-import org.crashwho.crashShop.Utils.Inventory.InvCreation;
+import org.crashwho.crashShop.internal.Utils.ChatFormat;
+import org.crashwho.crashShop.internal.Utils.Inventory.InvCreation;
 import revxrsal.commands.annotation.*;
 import revxrsal.commands.bukkit.actor.BukkitCommandActor;
 import revxrsal.commands.bukkit.annotation.CommandPermission;

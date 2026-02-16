@@ -1,4 +1,4 @@
-package org.crashwho.crashShop.Utils.Items;
+package org.crashwho.crashShop.internal.Utils.Items;
 
 import io.papermc.paper.datacomponent.DataComponentTypes;
 import io.papermc.paper.datacomponent.item.CustomModelData;
@@ -12,7 +12,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
-import org.crashwho.crashShop.Utils.ChatFormat;
+import org.crashwho.crashShop.internal.Utils.ChatFormat;
 
 import java.util.ArrayList;
 import java.util.HashMap;

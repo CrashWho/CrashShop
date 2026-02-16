@@ -1,14 +1,13 @@
-package org.crashwho.crashShop.Commands;
+package org.crashwho.crashShop.internal.Commands;
 
-import net.kyori.adventure.text.minimessage.tag.resolver.Formatter;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.crashwho.crashShop.CrashShop;
-import org.crashwho.crashShop.Utils.ChatFormat;
-import org.crashwho.crashShop.Utils.Items.GuiItemBuilder;
-import org.crashwho.crashShop.Utils.Items.SmartItem;
+import org.crashwho.crashShop.internal.Utils.ChatFormat;
+import org.crashwho.crashShop.internal.Utils.Items.GuiItemBuilder;
+import org.crashwho.crashShop.internal.Utils.Items.SmartItem;
 import revxrsal.commands.annotation.Command;
 import revxrsal.commands.annotation.CommandPlaceholder;
 import revxrsal.commands.bukkit.actor.BukkitCommandActor;

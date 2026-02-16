@@ -1,4 +1,4 @@
-package org.crashwho.crashShop.Utils;
+package org.crashwho.crashShop.internal.Utils;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
