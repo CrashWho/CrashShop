@@ -109,10 +109,10 @@ public class InvCreation extends InvManager {
             }
 
             if (event.isShiftClick()) {
-                if (CrashShop.getEconomy().has(player, product.getBuyPrice() * 64)) {
-                    CrashShop.getEconomy().withdrawPlayer(player, product.getBuyPrice() * 64);
-                    player.give(ItemStack.of(product.getItem().getType(), 64));
-                    sendShopMessage("buy", player, product, 64);
+                if (CrashShop.getEconomy().has(player, product.getBuyPrice() * product.getItem().getMaxStackSize())) {
+                    CrashShop.getEconomy().withdrawPlayer(player, product.getBuyPrice() * product.getItem().getMaxStackSize());
+                    player.give(ItemStack.of(product.getItem().getType(), product.getItem().getMaxStackSize()));
+                    sendShopMessage("buy", player, product, product.getItem().getMaxStackSize());
 
                 } else
                     player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.no-money")));

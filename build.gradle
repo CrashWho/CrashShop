@@ -7,7 +7,7 @@ plugins {
 
 def pluginName = "CrashShop"
 group = 'com.github.CrashWho'
-version = '1.0'
+version = '1.0.1'
 
 repositories {
     mavenCentral()
@@ -25,9 +25,6 @@ dependencies {
         exclude group: "org.bukkit"
     }
     implementation("com.github.stefvanschie.inventoryframework:IF:0.11.6")
-    implementation 'io.github.revxrsal:lamp.common:4.0.0-rc.14'
-    implementation 'io.github.revxrsal:lamp.bukkit:4.0.0-rc.14'
-    implementation 'io.github.revxrsal:lamp.brigadier:4.0.0-rc.14'
 }
 
 tasks {
@@ -57,11 +54,6 @@ tasks.withType(JavaCompile).configureEach {
     if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
         options.release.set(targetJavaVersion)
     }
-}
-
-compileJava {
-    // Preserve parameter names in the bytecode
-    options.compilerArgs += ["-parameters"]
 }
 
 tasks.shadowJar {

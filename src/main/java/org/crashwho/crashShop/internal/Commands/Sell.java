@@ -1,23 +1,23 @@
 package org.crashwho.crashShop.internal.Commands;
 
+import com.mojang.brigadier.Command;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.tree.LiteralCommandNode;
+import io.papermc.paper.command.brigadier.CommandSourceStack;
+import io.papermc.paper.command.brigadier.Commands;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Material;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.crashwho.crashShop.CrashShop;
 import org.crashwho.crashShop.internal.Utils.ChatFormat;
 import org.crashwho.crashShop.internal.Utils.Items.GuiItemBuilder;
 import org.crashwho.crashShop.internal.Utils.Items.SmartItem;
-import revxrsal.commands.annotation.Command;
-import revxrsal.commands.annotation.CommandPlaceholder;
-import revxrsal.commands.bukkit.actor.BukkitCommandActor;
-import revxrsal.commands.bukkit.annotation.CommandPermission;
 
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@Command("sellall")
-@CommandPermission("crashshop.sellall")
 public class Sell {
 
     final CrashShop crashShop;
@@ -26,15 +26,20 @@ public class Sell {
         this.crashShop = crashShop;
     }
 
-    @CommandPlaceholder
-    public void onSell(BukkitCommandActor actor) {
+    public LiteralCommandNode<CommandSourceStack> sellAllCommand() {
+        return Commands.literal("sellall")
+                .requires(sender -> sender.getSender().hasPermission("crashshop.sellall"))
+                .executes(this::onSell)
+                .build();
+    }
 
-        if (actor.isConsole()) {
-            actor.reply(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.console")));
-            return;
+    private int onSell(CommandContext<CommandSourceStack> ctx) {
+
+        if (!(ctx.getSource().getExecutor() instanceof Player player)) {
+            ctx.getSource().getSender().sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.console")));
+            return Command.SINGLE_SUCCESS;
         }
 
-        Player player = actor.requirePlayer();
         GuiItemBuilder guiItemBuilder = new GuiItemBuilder(crashShop);
         Map<Material, Double> sellPrices = guiItemBuilder.getAllShopItems().stream()
                 .collect(Collectors.toMap(
@@ -66,6 +71,7 @@ public class Sell {
             player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.no-sell")));
 
 
+        return Command.SINGLE_SUCCESS;
     }
 
 }

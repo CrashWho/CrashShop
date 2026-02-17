@@ -14,7 +14,7 @@
 # custom-model-data: 0 <-- Giving an item a custom model throw a texture pack
 # item-model: "opsword"
 # enchantments: <-- You can give any enchantment you want!
-#   minecraft:sharpness:5
+#   minecraft:sharpness: 5
 # lore:
 # - <red>this sword is OP!
 # glow: true <-- Default is false

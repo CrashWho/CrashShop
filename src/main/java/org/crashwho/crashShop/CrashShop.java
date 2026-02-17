@@ -1,5 +1,6 @@
 package org.crashwho.crashShop;
 
+import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -13,9 +14,6 @@ import org.crashwho.crashShop.internal.Utils.File.FileCreation;
 import org.crashwho.crashShop.internal.Utils.File.FileManager;
 import org.crashwho.crashShop.internal.Utils.File.ShopManager;
 import org.crashwho.crashShop.api.CrashShopAPI;
-import revxrsal.commands.Lamp;
-import revxrsal.commands.bukkit.BukkitLamp;
-import revxrsal.commands.bukkit.actor.BukkitCommandActor;
 
 
 
@@ -38,7 +36,7 @@ public final class CrashShop extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        setupLamp();
+        setupCmd();
         setupAPI();
 
     }
@@ -68,12 +66,11 @@ public final class CrashShop extends JavaPlugin {
         shopManager.loadShops();
     }
 
-    private void setupLamp() {
-        Lamp<BukkitCommandActor> lamp = BukkitLamp.builder(this)
-                .suggestionProviders(provider -> provider.addProvider(String.class, context -> getShopManager().getShopsIds()))
-                .build();
-        lamp.register(new Shop(this));
-        lamp.register(new Sell(this));
+    private void setupCmd() {
+        getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, e -> {
+            e.registrar().register(new Shop(this).shopCommand());
+            e.registrar().register(new Sell(this).sellAllCommand());
+        });
     }
 
     public static Economy getEconomy() {
