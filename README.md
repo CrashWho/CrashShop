@@ -164,9 +164,9 @@ compileOnly 'com.github.CrashWho:CrashShop:[version]'
 @Override
 public void onEnable() {
 	if (!setupAPI()) {
-	getLogger().severe("CrashShop not found! Please install the plugin on your server.");
-	getServer().getPluginManager().disablePlugin(this);
-	return;
+		getLogger().severe("CrashShop not found! Please install the plugin on your server.");
+		getServer().getPluginManager().disablePlugin(this);
+		return;
 	}
 }
 
