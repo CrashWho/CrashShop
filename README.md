@@ -157,3 +157,23 @@ repositories {
 
 ```gradle
 compileOnly 'com.github.CrashWho:CrashShop:[version]'
+```
+
+### Example
+```java
+@Override
+    public void onEnable() {
+        if (!setupAPI()) {
+            getLogger().severe("CrashShop not found! Please install the plugin on your server.");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+private boolean setupAPI() {
+        RegisteredServiceProvider<CrashShopAPI> rsp = getServer().getServicesManager().getRegistration(CrashShopAPI.class);
+        if (rsp == null) {
+            return false;
+        }
+        this.crashShopAPI = rsp.getProvider();
+        return crashShopAPI != null;
+    }
+```
