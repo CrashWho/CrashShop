@@ -145,6 +145,7 @@ Want to hook into **CrashShop** for your own custom plugins?
     <groupId>com.github.CrashWho</groupId>
     <artifactId>CrashShop</artifactId>
     <version>[version]</version>
+	<scope>provided</scope>
 </dependency>
 ```
 ### Gradle
