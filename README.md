@@ -1,7 +1,7 @@
 # <p align="center"><img src="https://github.com/user-attachments/assets/cce471d4-cb62-41ad-ad1d-81e3b812bc4e" width="50%" /></p>
 ### High-Performance Economy Solution for Modern Servers
 
-[![CodeRefactor](https://img.shields.io/badge/CodeRefactor-A%2B-success?style=for-the-badge)](https://www.codefactor.io/repository/github/crashwho/crashshop) ![Build Passing](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge) ![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)
+[![CodeRefactor](https://img.shields.io/badge/CodeRefactor-A%2B-success?style=for-the-badge)](https://www.codefactor.io/repository/github/crashwho/crashshop) ![Build Passing](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge) ![Version](https://img.shields.io/badge/Version-1.0.1-blue?style=for-the-badge)
 
 **CrashShop** is not just another shop plugin; it is an economy solution designed for server owners who demand stability. Built with strict adherence to clean code principles, this plugin ensures your players can buy, and sell items without ever compromising your server's TPS.
 
@@ -145,6 +145,7 @@ Want to hook into **CrashShop** for your own custom plugins?
     <groupId>com.github.CrashWho</groupId>
     <artifactId>CrashShop</artifactId>
     <version>[version]</version>
+	<scope>provided</scope>
 </dependency>
 ```
 ### Gradle
@@ -157,3 +158,25 @@ repositories {
 
 ```gradle
 compileOnly 'com.github.CrashWho:CrashShop:[version]'
+```
+
+### Example
+```java
+@Override
+public void onEnable() {
+	if (!setupAPI()) {
+		getLogger().severe("CrashShop not found! Please install the plugin on your server.");
+		getServer().getPluginManager().disablePlugin(this);
+		return;
+	}
+}
+
+private boolean setupAPI() {
+	RegisteredServiceProvider<CrashShopAPI> rsp = getServer().getServicesManager().getRegistration(CrashShopAPI.class);
+	if (rsp == null) {
+		return false;
+	}
+	this.crashShopAPI = rsp.getProvider();
+	return crashShopAPI != null;
+}
+```
