@@ -8,10 +8,13 @@ import com.github.stefvanschie.inventoryframework.pane.Pane;
 import com.github.stefvanschie.inventoryframework.pane.StaticPane;
 import com.github.stefvanschie.inventoryframework.pane.component.PagingButtons;
 import com.github.stefvanschie.inventoryframework.pane.util.Slot;
+import io.papermc.paper.datacomponent.DataComponentTypes;
 import net.kyori.adventure.text.minimessage.tag.resolver.Formatter;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
@@ -111,8 +114,8 @@ public class InvCreation extends InvManager {
             if (event.isShiftClick()) {
                 if (CrashShop.getEconomy().has(player, product.getBuyPrice() * product.getItem().getMaxStackSize())) {
                     CrashShop.getEconomy().withdrawPlayer(player, product.getBuyPrice() * product.getItem().getMaxStackSize());
-                    player.give(ItemStack.of(product.getItem().getType(), product.getItem().getMaxStackSize()));
-                    sendShopMessage("buy", player, product, product.getItem().getMaxStackSize());
+
+                    giveItem(player, product, product.getItem().getMaxStackSize());
 
                 } else
                     player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.no-money")));
@@ -121,8 +124,7 @@ public class InvCreation extends InvManager {
                 if (CrashShop.getEconomy().has(player, product.getBuyPrice())) {
 
                     CrashShop.getEconomy().withdrawPlayer(player, product.getBuyPrice());
-                    player.give(ItemStack.of(product.getItem().getType()));
-                    sendShopMessage("buy", player, product, 1);
+                    giveItem(player, product, 1);
 
                 } else
                     player.sendMessage(ChatFormat.prefixFormat(crashShop.getMessages().getString("messages.no-money")));
@@ -211,6 +213,30 @@ public class InvCreation extends InvManager {
 
     }
 
+    private void giveItem(Player player, SmartItem product, int amount) {
+
+        if (product.isEnableCommand()) {
+            String command = product.getGiveCommand().replaceAll("<player>", player.getName());
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
+            return;
+        }
+
+        ItemStack item = product.getItem();
+        item.unsetData(DataComponentTypes.CUSTOM_NAME);
+        item.unsetData(DataComponentTypes.LORE);
+        item.setAmount(amount);
+
+        giveOrDrop(player, item);
+        sendShopMessage("buy", player, product, amount);
+
+    }
+
+    private void giveOrDrop(Player player, ItemStack item) {
+        var items = player.getInventory().addItem(item);
+        if (!items.isEmpty())
+            items.values().forEach(i -> player.getWorld().dropItemNaturally(player.getLocation(), i));
+    }
+
     private void addFillerItem() {
         OutlinePane pane = new OutlinePane(0, 0, 9, inv.getRows(), Pane.Priority.LOWEST);
         GuiItemBuilder guiItemBuilder = new GuiItemBuilder(crashShop);
@@ -237,7 +263,7 @@ public class InvCreation extends InvManager {
 
         if (string.equals("buy"))
             money = CrashShop.getEconomy().format(product.getBuyPrice() * amount);
-        else if (string.equals("sell"))
+        else if (string.equals("sellsell"))
             money = CrashShop.getEconomy().format(product.getSellPrice() * amount);
 
 

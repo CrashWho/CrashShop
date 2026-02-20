@@ -12,15 +12,19 @@ public class SmartItem implements ShopItem {
     private final int page;
     private final double buyPrice;
     private final double sellPrice;
+    private final boolean enableCommand;
+    private final String giveCommand;
 
 
-    public SmartItem(String id, ItemStack item, int slot, int page, Double buyPrice, Double sellPrice) {
+    public SmartItem(String id, ItemStack item, int slot, int page, Double buyPrice, Double sellPrice, boolean enableCommand, String giveCommand) {
         this.id = id;
         this.item = item;
         this.slot = slot;
         this.page = page;
         this.buyPrice = buyPrice;
         this.sellPrice = sellPrice;
+        this.enableCommand = enableCommand;
+        this.giveCommand = giveCommand;
     }
 
     @Override
@@ -63,4 +67,13 @@ public class SmartItem implements ShopItem {
     public int getY() {
         return slot / 9;
     }
+
+    public boolean isEnableCommand() {
+        return enableCommand;
+    }
+
+    public String getGiveCommand() {
+        return giveCommand;
+    }
+
 }

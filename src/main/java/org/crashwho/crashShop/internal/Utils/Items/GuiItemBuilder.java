@@ -78,9 +78,10 @@ public class GuiItemBuilder extends ItemBuilder {
                 int page = section.getInt(key + ".page");
                 double buyPrice = section.getDouble(key + ".buy-price", -1.0);
                 double sellPrice = section.getDouble(key + ".sell-price", -1.0);
+                boolean enableCommand = section.getBoolean(key + ".commands.enabled", false);
+                String giveCommand = section.getString(key + ".commands.give");
 
-
-                items.add(new SmartItem(key, item, slot, page, buyPrice, sellPrice));
+                items.add(new SmartItem(key, item, slot, page, buyPrice, sellPrice, enableCommand, giveCommand));
 
             } catch (IllegalArgumentException e) {
                 e.printStackTrace();

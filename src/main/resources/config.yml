@@ -18,6 +18,9 @@
 # lore:
 # - <red>this sword is OP!
 # glow: true <-- Default is false
+# commands:
+#   enabled: true <-- Default is false
+#   give: "give <player> minecraft:diamond 1"
 
 general-items:
   back:

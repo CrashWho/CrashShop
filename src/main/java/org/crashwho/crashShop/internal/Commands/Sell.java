@@ -7,7 +7,6 @@ import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Material;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.crashwho.crashShop.CrashShop;
@@ -43,10 +42,15 @@ public class Sell {
         GuiItemBuilder guiItemBuilder = new GuiItemBuilder(crashShop);
         Map<Material, Double> sellPrices = guiItemBuilder.getAllShopItems().stream()
                 .collect(Collectors.toMap(
-                        item -> item.getItem().getType(),
-                        SmartItem::getSellPrice,
-                        (existing, replacement) -> existing
-                ));
+                        item ->  {
+
+                            if (item.canSell())
+                                return item.getItem().getType();
+                            else
+                                return null;
+
+                        }, SmartItem::getSellPrice, (existing, replacement) -> existing)
+                );
 
         double totalProfit = 0;
         for (ItemStack item : player.getInventory().getContents()) {
