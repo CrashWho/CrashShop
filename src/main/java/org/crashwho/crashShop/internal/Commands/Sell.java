@@ -53,11 +53,13 @@ public class Sell {
                 );
 
         double totalProfit = 0;
-        for (ItemStack item : player.getInventory().getContents()) {
+
+        for (ItemStack item : player.getInventory().getStorageContents()) {
 
             if (item == null || item.getType() == Material.AIR) continue;
 
             if (sellPrices.containsKey(item.getType())) {
+
                 double pricePerUnit = sellPrices.get(item.getType());
                 int amount = item.getAmount();
                 totalProfit += pricePerUnit * amount;
