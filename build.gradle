@@ -24,7 +24,7 @@ dependencies {
     compileOnly("com.github.MilkBowl:VaultAPI:1.7") {
         exclude group: "org.bukkit"
     }
-    implementation("com.github.stefvanschie.inventoryframework:IF:0.11.6")
+    implementation("com.github.stefvanschie.inventoryframework:IF:0.12.0")
 }
 
 tasks {
@@ -61,7 +61,6 @@ tasks.shadowJar {
     archiveClassifier.set('')
     archiveVersion.set(version)
     relocate 'com.github.stefvanschie.inventoryframework', 'org.crashwho.CrashShop.inventoryframework'
-    relocate 'revxrsal.commands', 'org.crashwho.CrashShop.lamp'
 }
 
 processResources {

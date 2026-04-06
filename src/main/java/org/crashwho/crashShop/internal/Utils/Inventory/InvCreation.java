@@ -14,7 +14,6 @@ import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
@@ -36,7 +35,7 @@ public class InvCreation extends InvManager {
     public void initMainInventory(Player player) {
         createInventory();
         GuiItemBuilder guiItemBuilder = new GuiItemBuilder(crashShop);
-        StaticPane pane = new StaticPane(0, 0, 9, inv.getRows());
+        StaticPane pane = new StaticPane(9, inv.getRows());
 
         guiItemBuilder.setupMainInventoryItems().forEach(product -> {
             GuiItem guiItem = new GuiItem(product.getItem(), event -> {
@@ -59,21 +58,21 @@ public class InvCreation extends InvManager {
         });
 
         addFillerItem();
-        inv.addPane(pane);
+        inv.addPane(Slot.fromIndex(0), pane);
         openGui(player);
     }
 
     public void initShop(Player player, String shop) {
         createShop(crashShop.getShopManager().getShop(shop).getData().getString("id"));
         GuiItemBuilder guiItemBuilder = new GuiItemBuilder(crashShop);
-        PaginatedPane paginatedPane = new PaginatedPane(0, 0, 9, inv.getRows());
+        PaginatedPane paginatedPane = new PaginatedPane(9, inv.getRows());
         Map<Integer, StaticPane> tempPages = new HashMap<>();
 
         guiItemBuilder.setupShopInventoryItems(shop).forEach(product -> {
 
             StaticPane pagePane = tempPages.computeIfAbsent(product.getPage(), p -> {
-                StaticPane newPane = new StaticPane(0, 0, 9, inv.getRows());
-                paginatedPane.addPane(p, newPane);
+                StaticPane newPane = new StaticPane(9, inv.getRows());
+                paginatedPane.addPane(p, Slot.fromIndex(0), newPane);
                 return newPane;
             });
 
@@ -85,7 +84,7 @@ public class InvCreation extends InvManager {
 
         addNavBar(paginatedPane);
         addFillerItem();
-        inv.addPane(paginatedPane);
+        inv.addPane(Slot.fromIndex(0), paginatedPane);
         addNavBar(paginatedPane);
         openGui(player);
     }
@@ -198,18 +197,16 @@ public class InvCreation extends InvManager {
 
         if (backItem == null || nextItem == null) return;
 
-        int Y = inv.getRows() - 1;
-
-        PagingButtons pagingButtons = new PagingButtons(Slot.fromXY(0, Y), 9, paginatedPane);
-        StaticPane staticPane = new StaticPane(0, 0, 9, inv.getRows());
+        PagingButtons pagingButtons = new PagingButtons(9, paginatedPane);
+        StaticPane staticPane = new StaticPane(9, inv.getRows());
         pagingButtons.setBackwardButton(new GuiItem(backItem.getItem()));
         pagingButtons.setForwardButton(new GuiItem(nextItem.getItem()));
         staticPane.addItem(new GuiItem(main.getItem(), event -> initMainInventory((Player) event.getWhoClicked())), main.getX(), main.getY());
 
 
         pagingButtons.setButtonsAlwaysVisible(true);
-        inv.addPane(pagingButtons);
-        inv.addPane(staticPane);
+        inv.addPane(Slot.fromXY(0, 5), pagingButtons);
+        inv.addPane(Slot.fromIndex(0), staticPane);
 
     }
 
@@ -238,7 +235,7 @@ public class InvCreation extends InvManager {
     }
 
     private void addFillerItem() {
-        OutlinePane pane = new OutlinePane(0, 0, 9, inv.getRows(), Pane.Priority.LOWEST);
+        OutlinePane pane = new OutlinePane(9, inv.getRows(), Pane.Priority.LOWEST);
         GuiItemBuilder guiItemBuilder = new GuiItemBuilder(crashShop);
 
         if (crashShop.getSettings().getBoolean("general-items.filler.enabled")) {
@@ -251,7 +248,7 @@ public class InvCreation extends InvManager {
             }
             pane.addItem(guiItem);
             pane.setRepeat(true);
-            inv.addPane(pane);
+            inv.addPane(Slot.fromIndex(0), pane);
         }
 
 
