@@ -26,10 +26,12 @@ general-items:
   back:
     material: ARROW
     displayname: "<red>Previous Page"
+    slot: 45
   next:
     material: ARROW
     displayname: "<green>Next Page"
-  main:
+    slot: 53
+  close:
     material: BARRIER
     displayname: "<red>Back"
     slot: 49

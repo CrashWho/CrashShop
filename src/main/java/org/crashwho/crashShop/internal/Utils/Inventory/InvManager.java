@@ -1,7 +1,9 @@
 package org.crashwho.crashShop.internal.Utils.Inventory;
 
-import com.github.stefvanschie.inventoryframework.gui.type.ChestGui;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import dev.triumphteam.gui.guis.BaseGui;
+import dev.triumphteam.gui.guis.Gui;
+import dev.triumphteam.gui.guis.PaginatedGui;
+import net.kyori.adventure.text.Component;
 import org.bukkit.entity.HumanEntity;
 import org.crashwho.crashShop.CrashShop;
 import org.crashwho.crashShop.internal.Utils.ChatFormat;
@@ -10,7 +12,8 @@ public class InvManager {
 
 
     protected final CrashShop crashShop;
-    protected ChestGui inv;
+    protected Gui gui;
+    protected PaginatedGui pGui;
 
     protected InvManager(CrashShop crashShop) {
         this.crashShop = crashShop;
@@ -18,27 +21,27 @@ public class InvManager {
 
     protected void createInventory() {
 
-        int row = crashShop.getMenu().getInt("rows");
-        String title = crashShop.getMenu().getString("title");
+        int rows = crashShop.getMenu().getInt("rows");
+        Component title = ChatFormat.format(crashShop.getMenu().getString("title"));
 
-        assert title != null;
-        inv = new ChestGui(row, title);
-        inv.setOnGlobalClick(event -> event.setCancelled(true));
+        gui = Gui.gui().title(title).rows(rows).create();
+        gui.setDefaultClickAction(event -> event.setCancelled(true));
 
     }
 
     protected void createShop(String id) {
 
-        int row = crashShop.getShopManager().getShop(id).getData().getInt("rows");
-        String title = LegacyComponentSerializer.legacySection().serialize(ChatFormat.format(crashShop.getShopManager().getShop(id).getData().getString("title")));
+        int rows = crashShop.getShopManager().getShop(id).getData().getInt("rows");
+        int pageSize = crashShop.getShopManager().getShop(id).getData().getInt("pageSize");
+        Component title = ChatFormat.format(crashShop.getShopManager().getShop(id).getData().getString("title"));
 
-        inv = new ChestGui(row, title);
-        inv.setOnGlobalClick(event -> event.setCancelled(true));
+        pGui = Gui.paginated().title(title).rows(rows).pageSize(pageSize).create();
+        pGui.setDefaultClickAction(event -> event.setCancelled(true));
 
     }
 
-    protected void openGui(HumanEntity player) {
-        inv.show(player);
+    protected void openGui(HumanEntity player, BaseGui gui) {
+        gui.open(player);
     }
 
 }

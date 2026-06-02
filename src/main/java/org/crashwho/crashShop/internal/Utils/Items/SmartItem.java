@@ -60,18 +60,17 @@ public class SmartItem implements ShopItem {
         return sellPrice;
     }
 
-    public int getX() {
-        return  slot % 9;
+    @Override
+    public int getSlot() {
+        return slot;
     }
 
-    public int getY() {
-        return slot / 9;
-    }
-
+    @Override
     public boolean isEnableCommand() {
         return enableCommand;
     }
 
+    @Override
     public String getGiveCommand() {
         return giveCommand;
     }

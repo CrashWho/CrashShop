@@ -4,12 +4,11 @@
 id: dye #Category identifier
 title: 'ᴅʏᴇ'
 rows: 6 #Total slots of the inventory: 54 (Double Chest)
+pageSize: 45
 items:
   white:
     material: WHITE_DYE
     displayname: "<gradient:white:gray>White Dye</gradient>"
-    slot: 10
-    page: 0
     buy-price: 10.0
     sell-price: 1.0
     lore:
@@ -23,8 +22,6 @@ items:
   orange:
     material: ORANGE_DYE
     displayname: "<gradient:gold:yellow>Orange Dye</gradient>"
-    slot: 11
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -38,8 +35,6 @@ items:
   magenta:
     material: MAGENTA_DYE
     displayname: "<gradient:light_purple:dark_purple>Magenta Dye</gradient>"
-    slot: 12
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -53,8 +48,6 @@ items:
   light_blue:
     material: LIGHT_BLUE_DYE
     displayname: "<gradient:aqua:blue>Light Blue Dye</gradient>"
-    slot: 13
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -68,8 +61,6 @@ items:
   yellow:
     material: YELLOW_DYE
     displayname: "<gradient:yellow:gold>Yellow Dye</gradient>"
-    slot: 14
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -83,8 +74,6 @@ items:
   lime:
     material: LIME_DYE
     displayname: "<gradient:green:dark_green>Lime Dye</gradient>"
-    slot: 15
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -98,8 +87,6 @@ items:
   pink:
     material: PINK_DYE
     displayname: "<gradient:light_purple:white>Pink Dye</gradient>"
-    slot: 16
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -113,8 +100,6 @@ items:
   gray:
     material: GRAY_DYE
     displayname: "<gradient:dark_gray:gray>Gray Dye</gradient>"
-    slot: 19
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -128,8 +113,6 @@ items:
   light_gray:
     material: LIGHT_GRAY_DYE
     displayname: "<gradient:gray:white>Light Gray Dye</gradient>"
-    slot: 20
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -143,8 +126,6 @@ items:
   cyan:
     material: CYAN_DYE
     displayname: "<gradient:dark_aqua:aqua>Cyan Dye</gradient>"
-    slot: 21
-    page: 0
     buy-price: 20.0
     sell-price: 3.0
     lore:
@@ -158,8 +139,6 @@ items:
   purple:
     material: PURPLE_DYE
     displayname: "<gradient:dark_purple:light_purple>Purple Dye</gradient>"
-    slot: 22
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -173,8 +152,6 @@ items:
   blue:
     material: BLUE_DYE
     displayname: "<gradient:dark_blue:blue>Blue Dye</gradient>"
-    slot: 23
-    page: 0
     buy-price: 20.0
     sell-price: 3.0
     lore:
@@ -188,8 +165,6 @@ items:
   brown:
     material: BROWN_DYE
     displayname: "<gradient:#8B4513:#A0522D>Brown Dye</gradient>"
-    slot: 24
-    page: 0
     buy-price: 20.0
     sell-price: 2.0
     lore:
@@ -203,8 +178,6 @@ items:
   green:
     material: GREEN_DYE
     displayname: "<gradient:dark_green:green>Green Dye</gradient>"
-    slot: 25
-    page: 0
     buy-price: 25.0
     sell-price: 4.0
     lore:
@@ -218,8 +191,6 @@ items:
   red:
     material: RED_DYE
     displayname: "<gradient:dark_red:red>Red Dye</gradient>"
-    slot: 28
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -233,8 +204,6 @@ items:
   black:
     material: BLACK_DYE
     displayname: "<gradient:#000000:#333333>Black Dye</gradient>"
-    slot: 29
-    page: 0
     buy-price: 20.0
     sell-price: 3.0
     lore:
@@ -248,8 +217,6 @@ items:
   ink:
     material: INK_SAC
     displayname: "<gradient:black:dark_gray>Ink Sac</gradient>"
-    slot: 30
-    page: 0
     buy-price: 25.0
     sell-price: 4.0
     lore:
@@ -263,8 +230,6 @@ items:
   glow_ink:
     material: GLOW_INK_SAC
     displayname: "<gradient:aqua:green>Glow Ink Sac</gradient>"
-    slot: 31
-    page: 0
     buy-price: 60.0
     sell-price: 15.0
     lore:
@@ -278,8 +243,6 @@ items:
   lapis:
     material: LAPIS_LAZULI
     displayname: "<gradient:blue:dark_blue>Lapis Lazuli</gradient>"
-    slot: 32
-    page: 0
     buy-price: 30.0
     sell-price: 4.0
     lore:
@@ -293,8 +256,6 @@ items:
   cocoa:
     material: COCOA_BEANS
     displayname: "<gradient:#8B4513:#ffa500>Cocoa Beans</gradient>"
-    slot: 33
-    page: 0
     buy-price: 20.0
     sell-price: 2.0
     lore:
@@ -308,8 +269,6 @@ items:
   bone_meal:
     material: BONE_MEAL
     displayname: "<gradient:white:gray>Bone Meal</gradient>"
-    slot: 34
-    page: 0
     buy-price: 15.0
     sell-price: 1.0
     lore:

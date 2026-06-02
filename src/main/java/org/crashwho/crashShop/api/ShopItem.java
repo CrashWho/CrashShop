@@ -15,5 +15,11 @@ public interface ShopItem {
 
     double getBuyPrice();
 
+    int getSlot();
+
+    boolean isEnableCommand();
+
+    String getGiveCommand();
+
 
 }

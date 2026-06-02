@@ -49,7 +49,7 @@ public class Sell {
                             else
                                 return null;
 
-                        }, SmartItem::getSellPrice, (existing, replacement) -> existing)
+                        }, SmartItem::getSellPrice, (existing, _) -> existing)
                 );
 
         double totalProfit = 0;

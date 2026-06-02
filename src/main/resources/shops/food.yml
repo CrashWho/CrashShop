@@ -4,12 +4,11 @@
 id: food #Category identifier
 title: 'ꜰᴏᴏᴅ'
 rows: 6 #Total slots of the inventory: 54 (Double Chest)
+pageSize: 45
 items:
   beef_raw:
     material: BEEF
     displayname: "<gradient:red:#8B0000>Raw Beef</gradient>"
-    slot: 10
-    page: 0
     buy-price: 30.0
     sell-price: 5.0
     lore:
@@ -23,8 +22,6 @@ items:
   steak:
     material: COOKED_BEEF
     displayname: "<gradient:#8B4513:#CD853F>Steak</gradient>"
-    slot: 11
-    page: 0
     buy-price: 50.0
     sell-price: 10.0
     lore:
@@ -38,8 +35,6 @@ items:
   pork_raw:
     material: PORKCHOP
     displayname: "<gradient:light_purple:#ffc0cb>Raw Porkchop</gradient>"
-    slot: 12
-    page: 0
     buy-price: 30.0
     sell-price: 5.0
     lore:
@@ -53,8 +48,6 @@ items:
   pork_cooked:
     material: COOKED_PORKCHOP
     displayname: "<gradient:#FFE4E1:#CD853F>Cooked Porkchop</gradient>"
-    slot: 13
-    page: 0
     buy-price: 50.0
     sell-price: 10.0
     lore:
@@ -68,8 +61,6 @@ items:
   chicken_raw:
     material: CHICKEN
     displayname: "<gradient:#FFE4C4:white>Raw Chicken</gradient>"
-    slot: 14
-    page: 0
     buy-price: 25.0
     sell-price: 4.0
     lore:
@@ -83,8 +74,6 @@ items:
   chicken_cooked:
     material: COOKED_CHICKEN
     displayname: "<gradient:#DAA520:#CD853F>Cooked Chicken</gradient>"
-    slot: 15
-    page: 0
     buy-price: 45.0
     sell-price: 8.0
     lore:
@@ -98,8 +87,6 @@ items:
   cod_raw:
     material: COD
     displayname: "<gradient:#DEB887:#F4A460>Raw Cod</gradient>"
-    slot: 16
-    page: 0
     buy-price: 20.0
     sell-price: 3.0
     lore:
@@ -113,8 +100,6 @@ items:
   cod_cooked:
     material: COOKED_COD
     displayname: "<gradient:white:#DEB887>Cooked Cod</gradient>"
-    slot: 19
-    page: 0
     buy-price: 40.0
     sell-price: 6.0
     lore:
@@ -128,8 +113,6 @@ items:
   salmon_raw:
     material: SALMON
     displayname: "<gradient:red:light_purple>Raw Salmon</gradient>"
-    slot: 20
-    page: 0
     buy-price: 20.0
     sell-price: 3.0
     lore:
@@ -143,8 +126,6 @@ items:
   salmon_cooked:
     material: COOKED_SALMON
     displayname: "<gradient:#FFBF00:red>Cooked Salmon</gradient>"
-    slot: 21
-    page: 0
     buy-price: 40.0
     sell-price: 6.0
     lore:
@@ -158,8 +139,6 @@ items:
   bread:
     material: BREAD
     displayname: "<gradient:#F4A460:#8B4513>Bread</gradient>"
-    slot: 22
-    page: 0
     buy-price: 30.0
     sell-price: 5.0
     lore:
@@ -173,8 +152,6 @@ items:
   cookie:
     material: COOKIE
     displayname: "<gradient:#D2691E:#FFBF00>Cookie</gradient>"
-    slot: 23
-    page: 0
     buy-price: 10.0
     sell-price: 1.0
     lore:
@@ -188,8 +165,6 @@ items:
   pie:
     material: PUMPKIN_PIE
     displayname: "<gradient:#FFBF00:yellow>Pumpkin Pie</gradient>"
-    slot: 24
-    page: 0
     buy-price: 40.0
     sell-price: 8.0
     lore:
@@ -203,8 +178,6 @@ items:
   cake:
     material: CAKE
     displayname: "<gradient:white:red>Cake</gradient>"
-    slot: 25
-    page: 0
     buy-price: 80.0
     sell-price: 15.0
     lore:
@@ -218,8 +191,6 @@ items:
   apple:
     material: APPLE
     displayname: "<gradient:red:dark_red>Apple</gradient>"
-    slot: 28
-    page: 0
     buy-price: 30.0
     sell-price: 5.0
     lore:
@@ -233,8 +204,6 @@ items:
   golden_apple:
     material: GOLDEN_APPLE
     displayname: "<gradient:yellow:gold>Golden Apple</gradient>"
-    slot: 29
-    page: 0
     buy-price: 250.0
     sell-price: 45.0
     lore:
@@ -248,8 +217,6 @@ items:
   ench_golden_apple:
     material: ENCHANTED_GOLDEN_APPLE
     displayname: "<gradient:light_purple:gold>Enchanted Golden Apple</gradient>"
-    slot: 30
-    page: 0
     buy-price: 5000.0
     sell-price: 500.0
     lore:
@@ -263,8 +230,6 @@ items:
   stew_rabbit:
     material: RABBIT_STEW
     displayname: "<gradient:#a52a2a:#CD853F>Rabbit Stew</gradient>"
-    slot: 31
-    page: 0
     buy-price: 45.0
     sell-price: 10.0
     lore:
@@ -278,8 +243,6 @@ items:
   stew_mushroom:
     material: MUSHROOM_STEW
     displayname: "<gradient:red:#a52a2a>Mushroom Stew</gradient>"
-    slot: 32
-    page: 0
     buy-price: 35.0
     sell-price: 8.0
     lore:
@@ -293,8 +256,6 @@ items:
   honey:
     material: HONEY_BOTTLE
     displayname: "<gradient:gold:yellow>Honey Bottle</gradient>"
-    slot: 33
-    page: 0
     buy-price: 35.0
     sell-price: 5.0
     lore:
@@ -308,8 +269,6 @@ items:
   glowing_melon:
     material: GLISTERING_MELON_SLICE
     displayname: "<gradient:gold:green>Glistering Melon</gradient>"
-    slot: 34
-    page: 0
     buy-price: 40.0
     sell-price: 8.0
     lore:

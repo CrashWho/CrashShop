@@ -4,12 +4,11 @@
 id: farming #Category identifier
 title: 'ꜰᴀʀᴍɪɴɢ'
 rows: 6 #Total slots of the inventory: 54 (Double Chest)
+pageSize: 45
 items:
   wheat:
     material: WHEAT
     displayname: "<gradient:yellow:#DAA520>Wheat</gradient>"
-    slot: 10
-    page: 0
     buy-price: 20.0
     sell-price: 4.0
     lore:
@@ -23,8 +22,6 @@ items:
   seeds:
     material: WHEAT_SEEDS
     displayname: "<gradient:green:#bfff00>Wheat Seeds</gradient>"
-    slot: 11
-    page: 0
     buy-price: 5.0
     sell-price: 0.5
     lore:
@@ -38,8 +35,6 @@ items:
   carrot:
     material: CARROT
     displayname: "<gradient:#FFBF00:gold>Carrot</gradient>"
-    slot: 12
-    page: 0
     buy-price: 20.0
     sell-price: 3.0
     lore:
@@ -53,8 +48,6 @@ items:
   potato:
     material: POTATO
     displayname: "<gradient:yellow:#DAA520>Potato</gradient>"
-    slot: 13
-    page: 0
     buy-price: 20.0
     sell-price: 3.0
     lore:
@@ -68,8 +61,6 @@ items:
   beetroot:
     material: BEETROOT
     displayname: "<gradient:dark_red:red>Beetroot</gradient>"
-    slot: 14
-    page: 0
     buy-price: 20.0
     sell-price: 3.0
     lore:
@@ -83,8 +74,6 @@ items:
   melon:
     material: MELON_SLICE
     displayname: "<gradient:green:#bfff00>Melon Slice</gradient>"
-    slot: 15
-    page: 0
     buy-price: 10.0
     sell-price: 0.5
     lore:
@@ -98,8 +87,6 @@ items:
   pumpkin:
     material: PUMPKIN
     displayname: "<gradient:#FFBF00:#FF8C00>Pumpkin</gradient>"
-    slot: 16
-    page: 0
     buy-price: 30.0
     sell-price: 2.0
     lore:
@@ -113,8 +100,6 @@ items:
   sugar:
     material: SUGAR_CANE
     displayname: "<gradient:green:#90EE90>Sugar Cane</gradient>"
-    slot: 19
-    page: 0
     buy-price: 30.0
     sell-price: 1.0
     lore:
@@ -128,8 +113,6 @@ items:
   cactus:
     material: CACTUS
     displayname: "<gradient:dark_green:green>Cactus</gradient>"
-    slot: 20
-    page: 0
     buy-price: 30.0
     sell-price: 1.0
     lore:
@@ -143,8 +126,6 @@ items:
   bamboo:
     material: BAMBOO
     displayname: "<gradient:green:yellow>Bamboo</gradient>"
-    slot: 21
-    page: 0
     buy-price: 30.0
     sell-price: 0.5
     lore:
@@ -158,8 +139,6 @@ items:
   kelp:
     material: KELP
     displayname: "<gradient:dark_green:#2E8B57>Kelp</gradient>"
-    slot: 22
-    page: 0
     buy-price: 20.0
     sell-price: 0.5
     lore:
@@ -173,8 +152,6 @@ items:
   berries:
     material: SWEET_BERRIES
     displayname: "<gradient:red:#DC143C>Sweet Berries</gradient>"
-    slot: 23
-    page: 0
     buy-price: 25.0
     sell-price: 2.0
     lore:
@@ -188,8 +165,6 @@ items:
   glow_berries:
     material: GLOW_BERRIES
     displayname: "<gradient:yellow:gold>Glow Berries</gradient>"
-    slot: 24
-    page: 0
     buy-price: 50.0
     sell-price: 4.0
     lore:
@@ -203,8 +178,6 @@ items:
   nether_wart:
     material: NETHER_WART
     displayname: "<gradient:dark_red:red>Nether Wart</gradient>"
-    slot: 25
-    page: 0
     buy-price: 50.0
     sell-price: 6.0
     lore:
@@ -218,8 +191,6 @@ items:
   chorus:
     material: CHORUS_FRUIT
     displayname: "<gradient:light_purple:dark_purple>Chorus Fruit</gradient>"
-    slot: 28
-    page: 0
     buy-price: 60.0
     sell-price: 8.0
     lore:
@@ -233,8 +204,6 @@ items:
   mushroom_red:
     material: RED_MUSHROOM
     displayname: "<gradient:red:white>Red Mushroom</gradient>"
-    slot: 29
-    page: 0
     buy-price: 30.0
     sell-price: 4.0
     lore:
@@ -248,8 +217,6 @@ items:
   mushroom_brown:
     material: BROWN_MUSHROOM
     displayname: "<gradient:#8B4513:gray>Brown Mushroom</gradient>"
-    slot: 30
-    page: 0
     buy-price: 30.0
     sell-price: 4.0
     lore:
@@ -263,8 +230,6 @@ items:
   vine:
     material: VINE
     displayname: "<gradient:dark_green:green>Vines</gradient>"
-    slot: 31
-    page: 0
     buy-price: 25.0
     sell-price: 2.0
     lore:
@@ -278,8 +243,6 @@ items:
   lilypad:
     material: LILY_PAD
     displayname: "<gradient:green:#32CD32>Lily Pad</gradient>"
-    slot: 32
-    page: 0
     buy-price: 35.0
     sell-price: 5.0
     lore:
@@ -293,8 +256,6 @@ items:
   spore:
     material: SPORE_BLOSSOM
     displayname: "<gradient:light_purple:#FF74D4>Spore Blossom</gradient>"
-    slot: 33
-    page: 0
     buy-price: 250.0
     sell-price: 25.0
     lore:
@@ -308,8 +269,6 @@ items:
   sea_pickle:
     material: SEA_PICKLE
     displayname: "<gradient:green:#ADFF2F>Sea Pickle</gradient>"
-    slot: 34
-    page: 0
     buy-price: 50.0
     sell-price: 5.0
     lore:

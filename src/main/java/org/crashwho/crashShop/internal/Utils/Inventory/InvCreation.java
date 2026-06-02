@@ -1,13 +1,11 @@
 package org.crashwho.crashShop.internal.Utils.Inventory;
 
 
-import com.github.stefvanschie.inventoryframework.gui.GuiItem;
-import com.github.stefvanschie.inventoryframework.pane.OutlinePane;
-import com.github.stefvanschie.inventoryframework.pane.PaginatedPane;
-import com.github.stefvanschie.inventoryframework.pane.Pane;
-import com.github.stefvanschie.inventoryframework.pane.StaticPane;
-import com.github.stefvanschie.inventoryframework.pane.component.PagingButtons;
-import com.github.stefvanschie.inventoryframework.pane.util.Slot;
+import dev.triumphteam.gui.builder.item.ItemBuilder;
+import dev.triumphteam.gui.guis.BaseGui;
+import dev.triumphteam.gui.guis.Gui;
+import dev.triumphteam.gui.guis.GuiItem;
+import dev.triumphteam.gui.guis.PaginatedGui;
 import io.papermc.paper.datacomponent.DataComponentTypes;
 import net.kyori.adventure.text.minimessage.tag.resolver.Formatter;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
@@ -22,9 +20,7 @@ import org.crashwho.crashShop.internal.Utils.ChatFormat;
 import org.crashwho.crashShop.internal.Utils.Items.GuiItemBuilder;
 import org.crashwho.crashShop.internal.Utils.Items.SmartItem;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class InvCreation extends InvManager {
 
@@ -35,9 +31,10 @@ public class InvCreation extends InvManager {
     public void initMainInventory(Player player) {
         createInventory();
         GuiItemBuilder guiItemBuilder = new GuiItemBuilder(crashShop);
-        StaticPane pane = new StaticPane(9, inv.getRows());
 
         guiItemBuilder.setupMainInventoryItems().forEach(product -> {
+
+
             GuiItem guiItem = new GuiItem(product.getItem(), event -> {
 
                 if (event.getClick().isRightClick())
@@ -51,42 +48,32 @@ public class InvCreation extends InvManager {
                }
 
                initShop(player, shop);
-               openGui(player);
 
             });
-            pane.addItem(guiItem, product.getX(), product.getY());
+            gui.setItem(product.getSlot(), guiItem);
+
         });
 
-        addFillerItem();
-        inv.addPane(Slot.fromIndex(0), pane);
-        openGui(player);
+        addFillerItem(gui);
+        openGui(player, gui);
     }
 
     public void initShop(Player player, String shop) {
         createShop(crashShop.getShopManager().getShop(shop).getData().getString("id"));
         GuiItemBuilder guiItemBuilder = new GuiItemBuilder(crashShop);
-        PaginatedPane paginatedPane = new PaginatedPane(9, inv.getRows());
-        Map<Integer, StaticPane> tempPages = new HashMap<>();
 
         guiItemBuilder.setupShopInventoryItems(shop).forEach(product -> {
 
-            StaticPane pagePane = tempPages.computeIfAbsent(product.getPage(), p -> {
-                StaticPane newPane = new StaticPane(9, inv.getRows());
-                paginatedPane.addPane(p, Slot.fromIndex(0), newPane);
-                return newPane;
-            });
-
             GuiItem guiItem = new GuiItem(product.getItem(), event -> shopInventoryEvent(event, product));
-            pagePane.addItem(guiItem, product.getX(), product.getY());
+
+            pGui.addItem(guiItem);
 
 
         });
 
-        addNavBar(paginatedPane);
-        addFillerItem();
-        inv.addPane(Slot.fromIndex(0), paginatedPane);
-        addNavBar(paginatedPane);
-        openGui(player);
+        addFillerItem(pGui);
+        addNavBar();
+        openGui(player, pGui);
     }
 
     private void shopInventoryEvent(InventoryClickEvent event, SmartItem product) {
@@ -177,7 +164,7 @@ public class InvCreation extends InvManager {
 
     }
 
-    private void addNavBar(PaginatedPane paginatedPane) {
+    private void addNavBar() {
         GuiItemBuilder guiItemBuilder = new GuiItemBuilder(crashShop);
         List<SmartItem> items = guiItemBuilder.setupNavItems();
 
@@ -185,28 +172,21 @@ public class InvCreation extends InvManager {
 
         SmartItem backItem = null;
         SmartItem nextItem = null;
-        SmartItem main = null;
+        SmartItem closeItem = null;
 
         for (SmartItem item : items) {
 
             if (item.getId().equals("back")) backItem = item;
             if (item.getId().equals("next")) nextItem = item;
-            if (item.getId().equals("main")) main = item;
+            if (item.getId().equals("close")) closeItem = item;
 
         }
 
-        if (backItem == null || nextItem == null) return;
+        if (backItem == null || nextItem == null || closeItem == null) return;
 
-        PagingButtons pagingButtons = new PagingButtons(9, paginatedPane);
-        StaticPane staticPane = new StaticPane(9, inv.getRows());
-        pagingButtons.setBackwardButton(new GuiItem(backItem.getItem()));
-        pagingButtons.setForwardButton(new GuiItem(nextItem.getItem()));
-        staticPane.addItem(new GuiItem(main.getItem(), event -> initMainInventory((Player) event.getWhoClicked())), main.getX(), main.getY());
-
-
-        pagingButtons.setButtonsAlwaysVisible(true);
-        inv.addPane(Slot.fromXY(0, 5), pagingButtons);
-        inv.addPane(Slot.fromIndex(0), staticPane);
+        pGui.setItem(backItem.getSlot(), new GuiItem(backItem.getItem(), _ -> pGui.previous()));
+        pGui.setItem(nextItem.getSlot(), new GuiItem(nextItem.getItem(), _ -> pGui.next()));
+        pGui.setItem(closeItem.getSlot(), new GuiItem(closeItem.getItem(), event -> initMainInventory((Player) event.getWhoClicked())));
 
     }
 
@@ -234,8 +214,7 @@ public class InvCreation extends InvManager {
             items.values().forEach(i -> player.getWorld().dropItemNaturally(player.getLocation(), i));
     }
 
-    private void addFillerItem() {
-        OutlinePane pane = new OutlinePane(9, inv.getRows(), Pane.Priority.LOWEST);
+    private void addFillerItem(BaseGui gui) {
         GuiItemBuilder guiItemBuilder = new GuiItemBuilder(crashShop);
 
         if (crashShop.getSettings().getBoolean("general-items.filler.enabled")) {
@@ -246,9 +225,14 @@ public class InvCreation extends InvManager {
                     guiItem = new GuiItem(item.getItem());
 
             }
-            pane.addItem(guiItem);
-            pane.setRepeat(true);
-            inv.addPane(Slot.fromIndex(0), pane);
+            assert guiItem != null;
+
+            if (gui instanceof Gui)
+                gui.getFiller().fill(guiItem);
+
+            if (gui instanceof PaginatedGui)
+                gui.getFiller().fillBorder(guiItem);
+
         }
 
 
@@ -260,7 +244,7 @@ public class InvCreation extends InvManager {
 
         if (string.equals("buy"))
             money = CrashShop.getEconomy().format(product.getBuyPrice() * amount);
-        else if (string.equals("sellsell"))
+        else if (string.equals("sell"))
             money = CrashShop.getEconomy().format(product.getSellPrice() * amount);
 
 

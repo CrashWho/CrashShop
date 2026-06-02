@@ -4,12 +4,11 @@
 id: ore #Category identifier
 title: 'ᴏʀᴇ'
 rows: 6 #Total slots of the inventory: 54 (Double Chest)
+pageSize: 45
 items:
   coal:
     material: COAL
     displayname: "<gradient:black:gray>Coal</gradient>"
-    slot: 10
-    page: 0
     buy-price: 20.0
     sell-price: 2.0
     custom-model-data: 4
@@ -27,8 +26,6 @@ items:
   charcoal:
     material: CHARCOAL
     displayname: "<gradient:gray:dark_gray>Charcoal</gradient>"
-    slot: 11
-    page: 0
     buy-price: 15.0
     sell-price: 1.0
     lore:
@@ -42,8 +39,6 @@ items:
   raw_iron:
     material: RAW_IRON
     displayname: "<gradient:#D2691E:gray>Raw Iron</gradient>"
-    slot: 12
-    page: 0
     buy-price: 30.0
     sell-price: 6.0
     lore:
@@ -57,8 +52,6 @@ items:
   iron_ingot:
     material: IRON_INGOT
     displayname: "<gradient:white:gray>Iron Ingot</gradient>"
-    slot: 13
-    page: 0
     buy-price: 50.0
     sell-price: 7.0
     lore:
@@ -72,8 +65,6 @@ items:
   raw_copper:
     material: RAW_COPPER
     displayname: "<gradient:#B87333:#D2691E>Raw Copper</gradient>"
-    slot: 14
-    page: 0
     buy-price: 25.0
     sell-price: 2.0
     lore:
@@ -87,8 +78,6 @@ items:
   copper_ingot:
     material: COPPER_INGOT
     displayname: "<gradient:#FF7F50:#B87333>Copper Ingot</gradient>"
-    slot: 15
-    page: 0
     buy-price: 40.0
     sell-price: 3.0
     lore:
@@ -102,8 +91,6 @@ items:
   raw_gold:
     material: RAW_GOLD
     displayname: "<gradient:yellow:gold>Raw Gold</gradient>"
-    slot: 16
-    page: 0
     buy-price: 40.0
     sell-price: 6.0
     lore:
@@ -117,8 +104,6 @@ items:
   gold_ingot:
     material: GOLD_INGOT
     displayname: "<gradient:gold:yellow>Gold Ingot</gradient>"
-    slot: 19
-    page: 0
     buy-price: 60.0
     sell-price: 7.0
     lore:
@@ -132,8 +117,6 @@ items:
   redstone:
     material: REDSTONE
     displayname: "<gradient:red:dark_red>Redstone Dust</gradient>"
-    slot: 20
-    page: 0
     buy-price: 20.0
     sell-price: 3.0
     lore:
@@ -147,8 +130,6 @@ items:
   lapis:
     material: LAPIS_LAZULI
     displayname: "<gradient:blue:dark_blue>Lapis Lazuli</gradient>"
-    slot: 21
-    page: 0
     buy-price: 20.0
     sell-price: 3.0
     lore:
@@ -162,8 +143,6 @@ items:
   diamond:
     material: DIAMOND
     displayname: "<gradient:aqua:dark_aqua>Diamond</gradient>"
-    slot: 22
-    page: 0
     buy-price: 600.0
     sell-price: 120.0
     lore:
@@ -177,8 +156,6 @@ items:
   emerald:
     material: EMERALD
     displayname: "<gradient:green:#bfff00>Emerald</gradient>"
-    slot: 23
-    page: 0
     buy-price: 100.0
     sell-price: 10.0
     lore:
@@ -192,8 +169,6 @@ items:
   netherite_scrap:
     material: NETHERITE_SCRAP
     displayname: "<gradient:#4A2E2B:#8B4513>Netherite Scrap</gradient>"
-    slot: 24
-    page: 0
     buy-price: 1500.0
     sell-price: 400.0
     lore:
@@ -207,8 +182,6 @@ items:
   netherite_ingot:
     material: NETHERITE_INGOT
     displayname: "<gradient:#3E3E3E:#5A5A5A>Netherite Ingot</gradient>"
-    slot: 25
-    page: 0
     buy-price: 6500.0
     sell-price: 1700.0
     lore:
@@ -222,8 +195,6 @@ items:
   quartz:
     material: QUARTZ
     displayname: "<gradient:white:#FFFAF0>Nether Quartz</gradient>"
-    slot: 28
-    page: 0
     buy-price: 25.0
     sell-price: 3.0
     lore:
@@ -237,8 +208,6 @@ items:
   amethyst:
     material: AMETHYST_SHARD
     displayname: "<gradient:light_purple:dark_purple>Amethyst Shard</gradient>"
-    slot: 29
-    page: 0
     buy-price: 40.0
     sell-price: 5.0
     lore:
@@ -252,8 +221,6 @@ items:
   glowstone_dust:
     material: GLOWSTONE_DUST
     displayname: "<gradient:yellow:gold>Glowstone Dust</gradient>"
-    slot: 30
-    page: 0
     buy-price: 25.0
     sell-price: 3.0
     lore:
@@ -267,8 +234,6 @@ items:
   flint:
     material: FLINT
     displayname: "<gradient:gray:black>Flint</gradient>"
-    slot: 31
-    page: 0
     buy-price: 15.0
     sell-price: 2.0
     lore:
@@ -282,8 +247,6 @@ items:
   obsidian:
     material: OBSIDIAN
     displayname: "<gradient:#000000:dark_purple>Obsidian</gradient>"
-    slot: 32
-    page: 0
     buy-price: 80.0
     sell-price: 10.0
     lore:
@@ -297,8 +260,6 @@ items:
   block_iron:
     material: IRON_BLOCK
     displayname: "<gradient:white:gray>Block of Iron</gradient>"
-    slot: 33
-    page: 0
     buy-price: 450.0
     sell-price: 63.0
     lore:
@@ -312,8 +273,6 @@ items:
   block_diamond:
     material: DIAMOND_BLOCK
     displayname: "<gradient:aqua:blue>Block of Diamond</gradient>"
-    slot: 34
-    page: 0
     buy-price: 5400.0
     sell-price: 1080.0
     lore:
