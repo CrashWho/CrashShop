@@ -1,7 +1,7 @@
 name: '${name}'
 version: ${version}
 main: org.crashwho.crashShop.CrashShop
-api-version: '1.21'
+api-version: '26.3'
 authors: [ CrashWho ]
 dependencies:
   server:

@@ -84,7 +84,7 @@ public class GuiItemBuilder extends ItemBuilder {
                 items.add(new SmartItem(key, item, slot, page, buyPrice, sellPrice, enableCommand, giveCommand));
 
             } catch (IllegalArgumentException e) {
-                e.printStackTrace();
+                e.fillInStackTrace();
             }
         }
         return items;
