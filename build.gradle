@@ -7,7 +7,7 @@ plugins {
 
 def pluginName = "CrashShop"
 group = 'com.github.CrashWho'
-version = '1.0.5'
+version = '1.0.6'
 
 repositories {
     mavenCentral()
